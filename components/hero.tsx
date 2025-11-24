@@ -47,8 +47,8 @@ function Hero() {
 
   return (
     <section>
-      <div className="m-2">
-        <div className="relative w-full overflow-hidden rounded-xl">
+      <div className="mt-16">
+        <div className="relative w-full overflow-hidden">
           <Carousel className="relative">
             <CarouselContent className="col-span-full row-span-full">
               {slides.map((slide) => {
@@ -59,14 +59,14 @@ function Hero() {
                         <div className="col-span-full row-span-full">
                           <video
                             src={slide.video}
-                            className="w-full h-full object-center object-fill rounded-xl"
+                            className="w-full h-full object-center object-fill"
                             muted
                             playsInline
                             loop
                             autoPlay
                           />
                         </div>
-                        <div className="col-span-full row-span-full z-10 bg-linear-to-t from-black/70 via-black/30 to-transparent rounded-xl" />
+                        <div className="col-span-full row-span-full z-10 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
                         <div className="col-span-full row-span-full relative z-10 flex h-full items-end">
                           <div className="container">
                             <div className="max-w-3xl py-8 lg:py-16">
@@ -106,7 +106,7 @@ function Hero() {
                             fill
                           />
                         </div>
-                        <div className="col-span-full row-span-full z-10 bg-linear-to-t from-black/70 via-black/30 to-transparent rounded-xl" />
+                        <div className="col-span-full row-span-full z-10 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
                         <div className="col-span-full row-span-full relative z-10 flex h-full items-end">
                           <div className="container">
                             <div className="max-w-3xl py-8 lg:py-16">
