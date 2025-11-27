@@ -3,24 +3,25 @@ import React from "react";
 interface PageHeaderProps {
   prefix?: string;
   title: string;
-  image: string;
 }
 
-function PageHeader({ prefix, title, image }: PageHeaderProps) {
+function PageHeader({ prefix, title }: PageHeaderProps) {
   return (
-    <section className="bg-[#f7f4f3]">
-      <div className="pt-17.5">
+    <section className="bg-[#f7f4f3] -mt-16">
+      <div className="pt-28">
         <div className="container">
           <div className="mb-5">
             <p className="font-bold text-secondary text-sm uppercase tracking-widest">
               {prefix}
             </p>
           </div>
-          <div className="py-4 grid grid-cols-1 gap-4">
-            <div className="mb-4">
-              <h1 className="font-heading font-light text-4xl">{title}</h1>
+          <div className="py-4 md:pt-8 md:pb-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 lg:gap-20 md:min-h-75">
+            <div className="col-span-2 lg:col-span-1">
+              <h1 className="font-heading font-light leading-tight text-4xl md:text-[4rem] mb-4 md:mb-9 ">
+                {title}
+              </h1>
             </div>
-            <div className="col-span-2"></div>
+            <div className="col-span-2 lg:col-span-1"></div>
           </div>
         </div>
       </div>

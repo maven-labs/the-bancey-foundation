@@ -46,7 +46,7 @@ function Hero() {
   ];
 
   return (
-    <section>
+    <section className="-mt-16">
       <div className="relative w-full overflow-hidden">
         <Carousel className="relative">
           <CarouselContent className="col-span-full row-span-full">
