@@ -25,10 +25,26 @@ import Footer from "@/components/footer";
 //   ],
 //   variable: "--font-heading",
 // });
-const fontHeading = Libre_Baskerville({
+const fontHeading = localFont({
+  src: [
+    {
+      path: "../public/fonts/Sentient_Complete/Fonts/WEB/fonts/Sentient-Light.woff2",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/Sentient_Complete/Fonts/WEB/fonts/Sentient-Regular.woff2",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/Sentient_Complete/Fonts/WEB/fonts/Sentient-Medium.woff2",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/Sentient_Complete/Fonts/WEB/fonts/Sentient-Bold.woff2",
+      weight: "700",
+    },
+  ],
   variable: "--font-heading",
-  weight: ["400", "700"],
-  subsets: ["latin"],
 });
 
 const fontBody = DM_Sans({
