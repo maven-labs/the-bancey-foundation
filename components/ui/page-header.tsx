@@ -27,10 +27,10 @@ function PageHeader({ prefix, title, image }: PageHeaderProps) {
     //     </div>
     //   </div>
     // </section>
-    <section className="bg-[#0b69d5]">
-      <div className="pt-28 pb-4 md:pt-60 md:pb-8">
+    <section className="">
+      <div className="pt-28 pb-4 md:pt-46 md:pb-8">
         <div className="container flex flex-col flex-nowrap">
-          <h1 className="text-white text-[1.75rem] md:text-4xl lg:text-[2.625rem] xl:text-[4rem] leading-[1.15] font-heading font-normal line-clamp-1">
+          <h1 className="text-[1.75rem] md:text-4xl lg:text-[2.625rem] xl:text-[4rem] leading-[1.15] font-heading font-normal line-clamp-2">
             {title}
           </h1>
         </div>

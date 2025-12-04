@@ -1,10 +1,13 @@
+import GeneralEnquiries from "@/components/general-enquiries";
+import GettingInvolved from "@/components/getting-involved";
 import PageHeader from "@/components/ui/page-header";
-import React from "react";
 
 function Contact() {
   return (
     <main>
       <PageHeader prefix="Contact Us" title="Contact Us" />
+      <GeneralEnquiries />
+      <GettingInvolved />
     </main>
   );
 }
