@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import {
   Barlow,
   Barlow_Semi_Condensed,
+  DM_Sans,
   Geist,
   Geist_Mono,
+  Ledger,
+  Libre_Baskerville,
   Sofia_Sans,
   Sofia_Sans_Condensed,
   Syne,
@@ -22,13 +25,13 @@ import Footer from "@/components/footer";
 //   ],
 //   variable: "--font-heading",
 // });
-const fontHeading = Barlow_Semi_Condensed({
+const fontHeading = Libre_Baskerville({
   variable: "--font-heading",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-const fontBody = Barlow({
+const fontBody = DM_Sans({
   variable: "--font-body",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],

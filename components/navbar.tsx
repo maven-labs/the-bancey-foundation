@@ -14,7 +14,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container">
         <nav
           aria-label="Main navigation"
@@ -38,7 +38,7 @@ function Navbar() {
               <li key={name}>
                 <Link
                   href={href}
-                  className="font-heading text-sm font-semibold uppercase tracking-wide text-muted-foreground hover:text-foreground transition-colors"
+                  className="font-body text-sm font-semibold uppercase tracking-wide text-white hover:underline underline-offset-2 transition-colors"
                 >
                   {name}
                 </Link>
@@ -51,7 +51,7 @@ function Navbar() {
               href="/donate"
               className={cn(
                 buttonVariants({ variant: "default", size: "lg" }),
-                "px-10",
+                "bg-white text-primary px-10",
               )}
             >
               Donate
