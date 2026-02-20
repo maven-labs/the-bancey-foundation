@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function ArticleCard({ article }: any) {
   return (
-    <div className="group w-[292.75px] md:w-65 lg:w-89 xl:w-83">
+    <div className="group w-[292.75px] md:w-65 lg:w-89 xl:w-83 flex-none shrink-0">
       <Link href="/article/what-the-2026-cars-will-demand-from-drivers-and-what-fans-can-expect-to-see">
         <div className="aspect-3/2 overflow-hidden">
           <img

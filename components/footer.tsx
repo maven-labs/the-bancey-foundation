@@ -116,7 +116,7 @@ function Footer() {
               <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
                 <div className="flex flex-col gap-4 text-sidebar">
                   <Link href="tel:0000000" target="_blank">
-                    <span>+233 54 032 3324</span>
+                    <span>+233 54 503 3909</span>
                   </Link>
                   <Link href="mailto:" target="_blank">
                     <span>contact@thebanceyfoundation.org</span>
