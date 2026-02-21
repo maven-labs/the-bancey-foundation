@@ -6,7 +6,7 @@ function Quote() {
       <div className="col-span-full row-span-full py-24 md:py-36 lg:py-64">
         <div className="container max-w-4xl">
           <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 text-white text-center">
-            <h3 className="font-heading font-semibold text-3xl md:text-4xl xl:text-6xl">
+            <h3 className="font-heading font-semibold text-3xl md:text-4xl xl:text-6xl leading-tight">
               Overcoming poverty is not a task of charity, it is an act of
               justice.
             </h3>
