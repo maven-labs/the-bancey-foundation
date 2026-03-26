@@ -1,34 +1,46 @@
 import Link from "next/link";
 import SectionHeader from "./ui/section-header";
 import { buttonVariants } from "./ui/button";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-const focusAreas = [
-  {
-    image:
-      "https://www.clevelandfoundation.org/files/news/preview/motogoselect3-large.png",
-    title: "Gender Equality",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aperiam accusamus ex nisi commodi excepturi unde.",
-    link: "",
-  },
-  {
-    image:
-      "https://www.rockefellerfoundation.org/wp-content/uploads/2020/01/Title-Image-1-23-1440x810.png",
-    title: "Decent Work and Economic Growth",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aperiam accusamus ex nisi commodi excepturi unde. Itaque amet, cum ea nobis quis velit necessitatibus, similique eos sit eum consectetur ut?",
-    link: "",
-  },
-  {
-    image:
-      "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d3/69400ca87fd1b0c0e6661dcc_report_photo_3.webp",
-    title: "Climate Action",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-    link: "",
-  },
-];
+interface FocusArea {
+  id: string;
+  title: string;
+  description: string;
+  image: {
+    url: string;
+  };
+  linkButtonTitle: string;
+  link: string;
+}
 
-function FocusAreas() {
+async function getData() {
+  const res = await fetch(process.env.NEXT_HYGRAPH_ENDPOINT!, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `query MyQuery {
+                focusAreas {
+                  id
+                  title
+                  description
+                  image {
+                    url
+                  }
+                  linkButtonTitle
+                  link
+                }
+              }`,
+    }),
+  });
+  const json = await res.json();
+  return json.data.focusAreas;
+}
+
+async function FocusAreas() {
+  const focusAreas: FocusArea[] = await getData();
+
   return (
     <section className="bg-[#faf7ec]">
       {/* <div className="pt-12 lg:pt-20 xl:pt-28"> */}
@@ -43,13 +55,15 @@ function FocusAreas() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 xl:gap-6 mt-12">
-            {focusAreas.map((area) => (
+            {focusAreas.map((area: FocusArea) => (
               <div className="w-full flex flex-col" key={area.title}>
                 <div className="mb-2 lg:mb-3">
                   <div className="aspect-3/2">
-                    <img
-                      src={area.image}
+                    <Image
+                      src={area.image.url}
                       alt=""
+                      width={920}
+                      height={480}
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
@@ -62,9 +76,14 @@ function FocusAreas() {
                   <div className="mt-9 md:mt-12 lg:mt-14">
                     <Link
                       href={area.link}
-                      className={buttonVariants({ variant: "link" })}
+                      className={cn(
+                        buttonVariants({ variant: "link" }),
+                        "py-0 hover:no-underline",
+                        "group flex flex-col gap-0.5 items-start whitespace-nowrap max-w-min",
+                      )}
                     >
-                      Learn More
+                      {area.linkButtonTitle}
+                      <div className="bg-primary h-0.5 w-0 group-hover:w-full transition-all duration-300" />
                     </Link>
                   </div>
                 </div>

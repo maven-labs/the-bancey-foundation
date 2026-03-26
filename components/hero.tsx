@@ -53,7 +53,7 @@ async function getData() {
 }
 
 async function Hero() {
-  const slides = await getData();
+  const slides: Slide[] = await getData();
 
   return (
     <section className="-mt-16">
@@ -73,6 +73,7 @@ async function Hero() {
                           playsInline
                           loop
                           autoPlay
+                          controls={false}
                         />
                       </div>
                       <div className="col-span-full row-span-full z-10 bg-linear-to-t from-black/70 via-black/30 to-transparent" />

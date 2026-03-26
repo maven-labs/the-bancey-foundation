@@ -1,21 +1,40 @@
+import Link from "next/link";
 import SectionHeader from "./ui/section-header";
 
-const programs = [
-  {
-    image: "https://cdn.buttercms.com/resize=width:2400/tzzIHkDRcmcf33jvRwUA",
-    title: "Mentorship Program",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing",
-  },
-  {
-    image: "https://cdn.buttercms.com/resize=width:2400/kPvJksDmTm6vdcP3v4pc",
-    title: "Ramadhan Program",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi error aliquam quam.",
-  },
-];
+interface Program {
+  id: string;
+  title: string;
+  description: string;
+  image: {
+    url: string;
+  };
+  link: string;
+}
 
-function Programs() {
-  // https://hewlett.org/
+async function getData() {
+  const res = await fetch(process.env.NEXT_HYGRAPH_ENDPOINT!, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `query MyQuery {
+                programs {
+                  id
+                  title
+                  description
+                  image {
+                    url
+                  }
+                    link
+        }
+      }`,
+    }),
+  });
+  const json = await res.json();
+  return json.data.programs;
+}
+
+async function Programs() {
+  const programs: Program[] = await getData();
   return (
     <section>
       <div className="py-6 md:py-8 lg:py-12">
@@ -29,30 +48,32 @@ function Programs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
             {/* Card */}
             {/* Use padding-top trick to enforce 3:2 (width:height = 3:2) aspect ratio = height = 66.666...% */}
-            {programs.map((program) => (
-              <div className="w-full" key={program.title}>
-                <div className="relative w-full pt-[60%]">
-                  <div className="absolute inset-0 grid">
-                    <div className="col-span-full row-span-full overflow-hidden">
-                      <img
-                        src={program.image}
-                        alt=""
-                        className="w-full h-full object-cover object-center select-none"
-                      />
-                    </div>
-                    <div className="col-span-full row-span-full bg-linear-to-b from-transparent via-60% via-transparent to-black"></div>
-                    <div className="col-span-full row-span-full p-4 md:p-6">
-                      <div className="h-full flex flex-col justify-end gap-2">
-                        <h3 className="text-xl md:text-[1.375rem] md:leading-6 xl:text-3xl text-white">
-                          {program.title}
-                        </h3>
-                        <p className="text-white text-sm line-clamp-2">
-                          {program.description}
-                        </p>
+            {programs.map((program: Program) => (
+              <div className="group w-full cursor-pointer" key={program.title}>
+                <Link href={program.link}>
+                  <div className="relative w-full pt-[60%]">
+                    <div className="absolute inset-0 grid">
+                      <div className="col-span-full row-span-full overflow-hidden">
+                        <img
+                          src={program.image.url}
+                          alt=""
+                          className="w-full h-full object-cover object-center select-none group-hover:scale-105 transition-all duration-300 ease-in-out"
+                        />
+                      </div>
+                      <div className="col-span-full row-span-full bg-linear-to-b from-transparent via-60% via-transparent to-black" />
+                      <div className="col-span-full row-span-full p-4 md:p-6">
+                        <div className="h-full flex flex-col justify-end gap-2">
+                          <h3 className="text-xl md:text-[1.375rem] md:leading-6 xl:text-3xl text-white group-hover:underline">
+                            {program.title}
+                          </h3>
+                          <p className="text-white text-sm line-clamp-2 group-hover:underline">
+                            {program.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
             {/* <div className="w-full flex flex-col flex-1">
