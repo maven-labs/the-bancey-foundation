@@ -9,7 +9,6 @@ function Leadership() {
           <div className="flex flex-col">
             <SectionHeader title="Our Leadership" />
           </div>
-          {/* Content here */}
           <div className="">
             <ul className="flex flex-col md:flex-row gap-x-8">
               <li className="mt-6 flex-1">
