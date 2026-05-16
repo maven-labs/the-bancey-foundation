@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "./ui/section-header";
 
@@ -40,55 +41,48 @@ async function Programs() {
       <div className="py-6 md:py-8 lg:py-12">
         <div className="container">
           <div className="flex flex-col">
-            <SectionHeader title="Programs/Community Impact/Stories" />
+            <SectionHeader
+              title="Programs"
+              action={
+                <Link
+                  href="/programs"
+                  className="text-sm md:text-base font-medium underline-offset-4 hover:underline"
+                >
+                  View All
+                </Link>
+              }
+            />
             <p className="text-lg max-w-4xl">
               We fund diverse groups of leaders driving lasting change
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
-            {/* Card */}
-            {/* Use padding-top trick to enforce 3:2 (width:height = 3:2) aspect ratio = height = 66.666...% */}
             {programs.map((program: Program) => (
-              <div className="group w-full cursor-pointer" key={program.title}>
-                <Link href={program.link}>
-                  <div className="relative w-full pt-[60%]">
-                    <div className="absolute inset-0 grid">
-                      <div className="col-span-full row-span-full overflow-hidden">
-                        <img
-                          src={program.image.url}
-                          alt=""
-                          className="w-full h-full object-cover object-center select-none group-hover:scale-105 transition-all duration-300 ease-in-out"
-                        />
-                      </div>
-                      <div className="col-span-full row-span-full bg-linear-to-b from-transparent via-60% via-transparent to-black" />
-                      <div className="col-span-full row-span-full p-4 md:p-6">
-                        <div className="h-full flex flex-col justify-end gap-2">
-                          <h3 className="text-xl md:text-[1.375rem] md:leading-6 xl:text-3xl text-white group-hover:underline">
-                            {program.title}
-                          </h3>
-                          <p className="text-white text-sm line-clamp-2 group-hover:underline">
-                            {program.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-            {/* <div className="w-full flex flex-col flex-1">
-              <div className="w-full max-w-none flex-1 aspect-3/2">
-                <div className="w-full h-full grid">
-                  <div className="w-full h-full relative col-span-full row-span-full">
-                    <img
-                      src="https://cdn.buttercms.com/resize=width:2400/ddCi2OdhSKeeROHdrkWK"
-                      alt=""
-                      className="w-full h-full object-cover object-center overflow-hidden select-none"
-                    />
+              <div
+                className="group relative block aspect-3/2 w-full overflow-hidden cursor-pointer"
+                key={program.id}
+              >
+                <Link href={program.link} className="absolute inset-0" />
+                <Image
+                  src={program.image.url}
+                  alt={program.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-b from-black/5 via-black/20 to-black/85" />
+                <div className="absolute inset-0 flex items-end p-4 md:p-6">
+                  <div className="max-w-2xl text-white">
+                    <h3 className="text-xl md:text-[1.375rem] md:leading-6 xl:text-3xl font-heading font-semibold underline-offset-4 group-hover:underline">
+                      {program.title}
+                    </h3>
+                    <p className="mt-2 text-sm md:text-base line-clamp-2">
+                      {program.description}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div> */}
+            ))}
           </div>
         </div>
       </div>
