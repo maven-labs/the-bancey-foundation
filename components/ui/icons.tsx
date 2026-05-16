@@ -1,6 +1,8 @@
-import { Menu } from "lucide-react";
+import { ChevronLeft, ChevronRight, Menu, Pause, Play } from "lucide-react";
 
 export const Icons = {
+  chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
   logo: ({ ...props }) => (
     <svg
       width="158"
@@ -90,6 +92,8 @@ export const Icons = {
     </svg>
   ),
   menu: Menu,
+  pause: Pause,
+  play: Play,
   threads: ({ ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

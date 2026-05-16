@@ -5,7 +5,7 @@ import { Icons } from "./ui/icons";
 
 function Footer() {
   return (
-    <footer className="bg-sidebar-primary">
+    <footer className="bg-[#f2f0ee]">
       <div className="py-8 md:py-12 lg:py-16">
         <div className="container">
           <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8">
@@ -16,14 +16,14 @@ function Footer() {
                   <Image
                     src="/logoipsum-404.svg"
                     alt="The Bancey Foundation logo"
-                    className="w-auto h-full invert"
+                    className="w-auto h-full"
                     width="256"
                     height="128"
                   />
                   <span className="sr-only">The Bancey Foundation</span>
                 </div>
                 {/* Social Media */}
-                <div className="flex gap-4 text-sidebar-primary-foreground">
+                <div className="flex gap-4">
                   <div className="cursor-pointer hover:text-muted-foreground">
                     <Link href="">
                       <Icons.facebook className="" />
@@ -59,7 +59,7 @@ function Footer() {
             </div>
             {/* The Foundation */}
             <div className="col-span-full md:col-span-4 lg:col-span-3">
-              <div className="flex flex-col gap-4 text-sidebar">
+              <div className="flex flex-col gap-4">
                 <Link href="" className="hover:underline underline-offset-4">
                   <span>About Us</span>
                 </Link>
@@ -82,7 +82,7 @@ function Footer() {
             </div>
             {/* Engage */}
             <div className="col-span-full md:col-span-4 lg:col-span-3">
-              <div className="flex flex-col gap-4 text-sidebar">
+              <div className="flex flex-col gap-4">
                 <Link href="" className="hover:underline underline-offset-4">
                   <span>Ways to Give</span>
                 </Link>
@@ -102,7 +102,7 @@ function Footer() {
             </div>
             {/* Financial */}
             <div className="col-span-full md:col-span-4 lg:col-span-3">
-              <div className="flex flex-col gap-4 text-sidebar">
+              <div className="flex flex-col gap-4">
                 <Link href="" className="hover:underline underline-offset-4">
                   <span>Annual Reports</span>
                 </Link>
@@ -114,7 +114,7 @@ function Footer() {
             {/* Contact */}
             <div className="col-span-full">
               <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
-                <div className="w-full flex flex-col gap-4 text-sidebar">
+                <div className="w-full flex flex-col gap-4">
                   <Link href="tel:0000000" target="_blank">
                     <span>+233 54 503 3909</span>
                   </Link>
@@ -127,7 +127,7 @@ function Footer() {
                     <span className="text-muted-foreground text-xs">
                       Designed and Developed by:
                     </span>
-                    <div className="group h-6 flex items-center justify-end gap-2 cursor-pointer text-white">
+                    <div className="group h-6 flex items-center justify-end gap-2 cursor-pointer">
                       <svg
                         width="150"
                         height="71"

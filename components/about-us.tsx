@@ -18,7 +18,7 @@ function AboutUs() {
                   alt=""
                   width={1024}
                   height={768}
-                  className="w-full h-full object-center object-cover rounded-sm"
+                  className="w-full h-full object-center object-cover"
                 />
               </div>
             </div>

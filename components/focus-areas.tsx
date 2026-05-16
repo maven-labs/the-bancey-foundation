@@ -75,7 +75,7 @@ async function FocusAreas() {
                 <div className="mt-auto">
                   <div className="mt-9 md:mt-12 lg:mt-14">
                     <Link
-                      href={`about/focus-areas/${area.link}`}
+                      href={`focus-areas/${area.link}`}
                       className={cn(
                         buttonVariants({ variant: "link" }),
                         "cursor-pointer py-0 hover:no-underline",
