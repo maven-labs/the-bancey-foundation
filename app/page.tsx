@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <AboutUs /> */}
-      {/* <Stats /> */}
-      {/* <FocusAreas /> */}
+      <AboutUs />
+      <Stats />
+      <FocusAreas />
 
       {/* Featured Initiative
 
@@ -34,7 +34,7 @@ CTA:
 
 Learn more */}
 
-      {/* <Quote /> */}
+      <Quote />
       {/* Mentorship Program
 
 This is actually huge.
@@ -54,9 +54,9 @@ Then:
 Register now
 
 This is one of your biggest conversion opportunities. */}
-      {/* <Programs /> */}
-      {/* <Stories /> */}
-      {/* <Gallery /> */}
+      <Programs />
+      <Stories />
+      <Gallery />
       {/* Get Involved
 
 I would create this.
