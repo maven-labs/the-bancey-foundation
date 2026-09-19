@@ -13,34 +13,29 @@ function Stats() {
           <div className="mt-10 flex flex-col lg:flex-row gap-6">
             <div className="relative w-full">
               <div className="text-center md:text-start py-5 text-white">
-                <span className="text-5xl lg:text-[55px] font-light">
-                  9 Billion+
-                </span>
+                <span className="text-5xl lg:text-[55px] font-light">500+</span>
                 <p className="text-lg leading-normal mt-2">
-                  Since 1978, our donors have granted more than $9 billion to
-                  charities that mean the most to them.
+                  Since 2025, our donors have enabled us impact the lives of
+                  more than 500 young people that mean the most to them.
                 </p>
               </div>
             </div>
             <div className="relative w-full">
               <div className="text-center md:text-start py-5 text-white">
-                <span className="text-5xl lg:text-[55px] font-light">
-                  8,000+
-                </span>
+                <span className="text-5xl lg:text-[55px] font-light">15</span>
                 <p className="text-lg leading-normal mt-2">
-                  We thoughtfully administer more than 8,000 funds for donors
+                  We thoughtfully administer more than 15 community engagements
                   across the country.
                 </p>
               </div>
             </div>
             <div className="relative w-full">
               <div className="text-center md:text-start py-5 text-white">
-                <span className="text-5xl lg:text-[55px] font-light">
-                  $8 Billion+
-                </span>
+                <span className="text-5xl lg:text-[55px] font-light">25+</span>
                 <p className="text-lg leading-normal mt-2">
-                  Our $8 billion in assets are held in charitable funds
-                  established by donors with unique goals and interests.
+                  Our valiant volunteers help in identifying and soliciting
+                  charitable funds established by donors with unique goals and
+                  interests.
                 </p>
               </div>
             </div>

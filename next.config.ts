@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       new URL("https://www.fordfoundation.org/wp-content/uploads/2023/07/Program-Header_Natural_Resources_Climate_Change.jpg"),
       new URL("https://www.fordfoundation.org/wp-content/uploads/2015/01/PP_Civic_Engagement_V2Option-4_V2.jpg"),
       new URL("https://www.fordfoundation.org/wp-content/uploads/2018/02/Future_of_Workers_2026_hero.jpg"),
+      new URL("https://assets.weforum.org/article/image/**")
     ]
   },
 };

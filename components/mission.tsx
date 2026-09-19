@@ -36,7 +36,7 @@ function Mission() {
     //   </div>
     // </section>
 
-    <section>
+    <section id="mission">
       <div className="py-6 md:py-8 lg:py-12">
         <div className="container">
           <div className="flex flex-col">

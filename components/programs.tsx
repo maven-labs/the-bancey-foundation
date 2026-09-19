@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "./ui/section-header";
+import { buttonVariants } from "./ui/button";
 
 interface Program {
   id: string;
@@ -46,7 +47,7 @@ async function Programs() {
               action={
                 <Link
                   href="/programs"
-                  className="text-sm md:text-base font-medium underline-offset-4 hover:underline"
+                  className={buttonVariants({ variant: "link", size: "lg" })}
                 >
                   View All
                 </Link>

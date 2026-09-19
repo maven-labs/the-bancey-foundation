@@ -42,7 +42,7 @@ async function Hero() {
 
   return (
     <section
-      className="-mt-16 relative w-full aspect-3/4 md:aspect-[2.1] overflow-hidden bg-black"
+      className="relative w-full aspect-3/4 md:aspect-[2.1] overflow-hidden bg-black"
       aria-label="Hero slideshow"
     >
       <HeroSlider slides={slides} />
