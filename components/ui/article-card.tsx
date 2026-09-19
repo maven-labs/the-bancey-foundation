@@ -13,7 +13,7 @@ function ArticleCard({ article }: any) {
       <div className="pt-5 pb-3 xl:pt-8 xl:pb-4 flex flex-col gap-2 xl:gap-4">
         <div className="flex items-center flex-wrap gap-1">
           <span className="text-xs leading-none font-muted-foreground uppercase">
-            Article
+            {article.type}
           </span>
           <span className="text-xs font-muted-foreground uppercase">-</span>
           <span className="text-xs font-muted-foreground uppercase">

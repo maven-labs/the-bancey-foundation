@@ -11,8 +11,8 @@ function GettingInvolved() {
                 Getting Involved
               </div>
               <div className="col-span-full xl:col-span-9">
-                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 [&>li:not(:last-child)]:border-b">
-                  <li className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col">
+                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 [&>li]:border-b">
+                  {/* <li className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col">
                     <h4 className="font-semibold mb-3">General inquiries</h4>
                     <div className="mt-1">
                       <p className="text-sm">
@@ -31,7 +31,7 @@ function GettingInvolved() {
                         </li>
                       </ul>
                     </div>
-                  </li>
+                  </li> */}
                   <li className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col">
                     <h4 className="font-semibold mb-3">Give with us</h4>
                     <div className="mt-1">
@@ -44,15 +44,18 @@ function GettingInvolved() {
                     <div className="mt-auto">
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
-                          <Link href="" className="text-primary">
-                            Learn more
+                          <Link
+                            href="tel:+233545033909"
+                            className="text-primary hover:underline"
+                          >
+                            Call Us
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </li>
                   <li className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col">
-                    <h4 className="font-semibold mb-3">Media inquiries</h4>
+                    <h4 className="font-semibold mb-3">Media enquiries</h4>
                     <div className="mt-1">
                       <p className="text-sm">
                         If you are a member of the news media, please use the
@@ -65,14 +68,20 @@ function GettingInvolved() {
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
                           <span className="font-semibold">Phone:</span>
-                          <Link href="tel:+1234567890" className="text-primary">
-                            +1 206.709.3400
+                          <Link
+                            href="tel:+1234567890"
+                            className="text-primary hover:underline"
+                          >
+                            +233545033909
                           </Link>
                         </li>
                         <li className="flex flex-col text-sm">
                           <span className="font-semibold">Email:</span>
-                          <Link href="tel:+1234567890" className="text-primary">
-                            media@banceyfoundation.org
+                          <Link
+                            href="tel:+1234567890"
+                            className="text-primary hover:underline"
+                          >
+                            media@thebanceyfoundation.org
                           </Link>
                         </li>
                       </ul>
@@ -89,7 +98,10 @@ function GettingInvolved() {
                     <div className="mt-auto">
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
-                          <Link href="tel:+1234567890" className="text-primary">
+                          <Link
+                            href=""
+                            className="text-primary hover:underline"
+                          >
                             Browse our job openings
                           </Link>
                         </li>
@@ -110,15 +122,18 @@ function GettingInvolved() {
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
                           <span className="font-semibold">Phone:</span>
-                          <Link href="tel:+1234567890" className="text-primary">
-                            +1 (234) 567-890
+                          <Link
+                            href="tel:+233545033909"
+                            className="text-primary hover:underline"
+                          >
+                            Call us
                           </Link>
                         </li>
                         <li className="flex flex-col text-sm">
                           <span className="font-semibold">Email:</span>
                           <Link
                             href="mailto:media@banceyfoundation.org"
-                            className="text-primary"
+                            className="text-primary hover:underline"
                           >
                             media@banceyfoundation.org
                           </Link>
@@ -139,14 +154,20 @@ function GettingInvolved() {
                     <div className="mt-auto">
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
-                          <Link href="tel:+1234567890" className="text-primary">
+                          <Link
+                            href="mailto:"
+                            className="text-primary hover:underline"
+                          >
                             Learn more
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </li>
-                  <li className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col">
+                  <li
+                    id="report"
+                    className="col-span-full md:col-span-1 pb-4 md:pb-6 lg:pb-8 flex flex-col"
+                  >
                     <h4 className="font-semibold mb-3">Reporting scams</h4>
                     <div className="mt-1">
                       <p className="text-sm">
@@ -158,8 +179,11 @@ function GettingInvolved() {
                     <div className="mt-auto">
                       <ul className="mt-4 space-y-3">
                         <li className="flex flex-col text-sm">
-                          <Link href="tel:+1234567890" className="text-primary">
-                            Learn More
+                          <Link
+                            href="tel:+1234567890"
+                            className="text-primary hover:underline"
+                          >
+                            Call Us
                           </Link>
                         </li>
                       </ul>

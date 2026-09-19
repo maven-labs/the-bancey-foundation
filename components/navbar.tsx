@@ -34,7 +34,7 @@ const NAV_ITEMS: NavItem[] = [
     featured: {
       eyebrow: "What we stand for",
       heading: "Building a more equitable world",
-      body: "The Bancey Foundation (TBF) in Ghana, Africa is a youth-led organization using storytelling, education and community impact to advance gender equality, economic empowerment, and climate resilience across communities in Africa.",
+      body: "The Bancey Foundation (TBF) in Ghana, Africa is a youth-led organization using storytelling, education and community impact to advance gender equity, youth empowerment, and climate resilience across communities in Africa.",
       cta: "See all focus areas",
       href: "/focus-areas",
     },
@@ -57,68 +57,12 @@ const NAV_ITEMS: NavItem[] = [
           "At The Bancey Foundation (TBF), we believe that sustainable change begins with informed action.",
         href: "climate-action",
       },
-      // {
-      //   label: "Clean Water",
-      //   description:
-      //     "Safe drinking water for rural and peri-urban communities.",
-      //   href: "/focus-areas/clean-water",
-      // },
-      // {
-      //   label: "Education",
-      //   description:
-      //     "Scholarships, schools, and learning resources for all ages.",
-      //   href: "/focus-areas/education",
-      // },
-      // {
-      //   label: "Food Security",
-      //   description:
-      //     "Sustainable agriculture and emergency nutrition programmes.",
-      //   href: "/focus-areas/food-security",
-      // },
-      // {
-      //   label: "Healthcare",
-      //   description:
-      //     "Community clinics, maternal health, and disease prevention.",
-      //   href: "/focus-areas/healthcare",
-      // },
-      // {
-      //   label: "Economic Empowerment",
-      //   description: "Micro-finance, skills training, and livelihood support.",
-      //   href: "/focus-areas/economic-empowerment",
-      // },
-      // {
-      //   label: "Women & Girls",
-      //   description: "Championing gender equality and girls' rights globally.",
-      //   href: "/focus-areas/women-and-girls",
-      // },
     ],
   },
   { label: "Impact Stories", href: "/impact-stories" },
-  { label: "Programs", href: "/programs" },
+  // { label: "Programs", href: "/programs" },
   { label: "Contact", href: "/contact" },
 ];
-
-// ─── Scroll detection ─────────────────────────────────────────────────────────
-
-function useScrolled() {
-  const [scrolled, setScrolled] = useState(false);
-  const triggerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { rootMargin: "-64px 0px 0px 0px", threshold: 0 },
-    );
-    const el = triggerRef.current;
-    if (el) observer.observe(el);
-    return () => {
-      if (el) observer.unobserve(el);
-      observer.disconnect();
-    };
-  }, []);
-
-  return { scrolled, triggerRef };
-}
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -183,22 +127,16 @@ function HamburgerIcon() {
 
 // ─── Desktop nav link (plain) ─────────────────────────────────────────────────
 
-function DesktopLink({ item, scrolled }: { item: NavItem; scrolled: boolean }) {
+function DesktopLink({ item }: { item: NavItem }) {
   return (
     <Link
       href={item.href ?? "#"}
-      className={cn(
-        "group flex flex-col gap-0.5 px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.04em] transition-colors duration-150",
-        scrolled
-          ? "text-foreground hover:text-primary"
-          : "text-white/90 hover:text-white",
-      )}
+      className="group flex flex-col gap-0.5 px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.04em] transition-colors duration-150 text-foreground hover:text-primary"
     >
       {item.label}
       <span
         className={cn(
-          "h-px w-0 group-hover:w-full transition-all duration-300",
-          scrolled ? "bg-primary" : "bg-white",
+          "h-px w-0 group-hover:w-full transition-all duration-300 bg-white",
         )}
       />
     </Link>
@@ -209,13 +147,11 @@ function DesktopLink({ item, scrolled }: { item: NavItem; scrolled: boolean }) {
 
 function DesktopDropdown({
   item,
-  scrolled,
   isOpen,
   onOpen,
   onClose,
 }: {
   item: NavItem;
-  scrolled: boolean;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -241,12 +177,7 @@ function DesktopDropdown({
       <button
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={cn(
-          "flex items-center gap-1.5 rounded-md px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.04em] transition-colors duration-150",
-          scrolled
-            ? "text-foreground hover:text-primary"
-            : "text-white/90 hover:text-white",
-        )}
+        className="flex items-center gap-1.5 rounded-md px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.04em] transition-colors duration-150 text-foreground hover:text-primary"
       >
         {item.label}
         <ChevronDown
@@ -292,7 +223,7 @@ function DesktopDropdown({
                   <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
                     {item.featured.eyebrow}
                   </p>
-                  <h2 className="mb-4 text-[22px] font-extrabold leading-tight tracking-tight text-foreground">
+                  <h2 className="mb-4 text-[22px] font-bold leading-tight tracking-tight text-foreground">
                     {item.featured.heading}
                   </h2>
                   <p className="text-[13px] leading-relaxed text-muted-foreground">
@@ -317,7 +248,7 @@ function DesktopDropdown({
               {item.children?.map((child) => (
                 <Link
                   key={child.href}
-                  href={`focus-areas/${child.href}`}
+                  href={`/focus-areas/${child.href}`}
                   tabIndex={isOpen ? 0 : -1}
                   onClick={onClose}
                   className="group -mx-4 flex flex-col gap-1 rounded-none px-4 py-4 transition-colors duration-150 hover:bg-muted"
@@ -530,7 +461,6 @@ function MobilePanel({
 // ─── Main Navbar ──────────────────────────────────────────────────────────────
 
 export default function Navbar() {
-  const { scrolled, triggerRef } = useScrolled();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -546,8 +476,8 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed left-0 right-0 top-0 z-20 h-16 transition-colors duration-200",
-          scrolled || openDropdown ? "bg-white shadow-sm" : "bg-transparent",
+          "relative h-16 transition-colors duration-200",
+          openDropdown ? "bg-white shadow-sm" : "bg-transparent",
         )}
       >
         <div className="container h-full">
@@ -558,7 +488,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logoipsum-404.svg"
+                src="/images/tbf-logo.svg"
                 alt="The Bancey Foundation"
                 className="h-8 w-auto"
                 width={256}
@@ -574,17 +504,12 @@ export default function Navbar() {
                   <DesktopDropdown
                     key={item.label}
                     item={item}
-                    scrolled={scrolled}
                     isOpen={openDropdown === item.label}
                     onOpen={() => handleOpen(item.label)}
                     onClose={handleClose}
                   />
                 ) : (
-                  <DesktopLink
-                    key={item.label}
-                    item={item}
-                    scrolled={scrolled}
-                  />
+                  <DesktopLink key={item.label} item={item} />
                 ),
               )}
 
@@ -605,22 +530,13 @@ export default function Navbar() {
               aria-label="Open navigation menu"
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
-              className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden",
-                scrolled
-                  ? "text-foreground hover:bg-neutral-100"
-                  : "text-white hover:bg-white/10",
-              )}
+              className="flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden text-foreground hover:bg-neutral-100"
             >
               <HamburgerIcon />
             </button>
           </nav>
         </div>
       </header>
-
-      {/* Scroll trigger — sits directly below the fixed header */}
-      <div ref={triggerRef} className="h-16" aria-hidden="true" />
-
       <MobilePanel open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );

@@ -24,41 +24,15 @@ function AboutUs() {
             </div>
             <div className="block flex-1">
               <p className="text-base lg:text-lg">
-                The Bancey Foundation (TBF) in Ghana, Africa is a youth-led
-                organization using storytelling, education and community impact
-                to advance gender equality, economic empowerment, and climate
-                resilience across communities in Africa.
+                The Bancey Foundation (TBF) is an organization dedicated to
+                creating positive change through education, climate action and
+                social innovation.
               </p>
               <p className="text-base lg:text-lg mt-4">
-                The Bancey Foundation's mission aligns with the United Nations
-                Sustainable Development&nbsp;
-                <Link
-                  href="https://sdgs.un.org/goals/goal5"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                >
-                  Goals 5 (Gender Equality)
-                </Link>
-                ,&nbsp;
-                <Link
-                  href="https://sdgs.un.org/goals/goal8"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                >
-                  8 (Decent Work and Economic Growth)
-                </Link>
-                , and&nbsp;
-                <Link
-                  href="https://sdgs.un.org/goals/goal13"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                >
-                  13 (Climate Action)
-                </Link>
-                . We aim to build inclusive systems that empower marginalized
-                groups, strengthen community resilience, and inspire collective
-                action toward a fairer, greener, and more sustainable future for
-                all.
+                We cultivate transformative leadership, advance environmental
+                sustainability, and create equitable opportunities so that every
+                individual can thrive and contribute to build a more just and
+                resilient future for all.
               </p>
               <div className="mt-6">
                 <Link

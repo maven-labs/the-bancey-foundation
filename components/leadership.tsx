@@ -1,22 +1,25 @@
 import Link from "next/link";
 import SectionHeader from "./ui/section-header";
+import Image from "next/image";
 
 function Leadership() {
   return (
-    <section>
+    <section id="leadership">
       <div className="py-6 md:py-8 lg:py-12">
         <div className="container">
           <div className="flex flex-col">
             <SectionHeader title="Our Leadership" />
           </div>
           <div className="">
-            <ul className="flex flex-col md:flex-row gap-x-8">
-              <li className="mt-6 flex-1">
-                <Link href="" className="flex flex-col">
-                  <figure className="relative w-full overflow-hidden aspect-3/2">
-                    <img
+            <ul className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8">
+              <li className="mt-6 flex-1 h-full">
+                <div className="relative flex flex-col">
+                  <figure className="relative w-full h-full max-h-90 overflow-hidden aspect-2/3">
+                    <Image
                       src="/images/portrait-joyful-good-looking-woman-has-islamic-views-smiles-gently-camera.jpg"
                       alt=""
+                      width={768}
+                      height={480}
                       className="w-full h-full object-cover object-center"
                     />
                   </figure>
@@ -31,15 +34,17 @@ function Leadership() {
                       to fund the Bancey Foundation.
                     </p>
                   </div>
-                </Link>
+                </div>
               </li>
-              <li className="mt-6 flex-1">
-                <Link href="" className="flex flex-col">
-                  <figure className="relative w-full overflow-hidden aspect-3/2">
-                    <img
+              <li className="mt-6 flex-1 h-full">
+                <div className="relative flex flex-col">
+                  <figure className="relative w-full h-full max-h-90 overflow-hidden aspect-2/3">
+                    <Image
                       src="/images/happy-joyful-muslim-businesswoman-posing-outside.jpg"
                       alt=""
-                      className="w-full h-full object-cover object-top"
+                      width={768}
+                      height={480}
+                      className="w-full h-full object-cover object-center"
                     />
                   </figure>
                   <div className="pt-4">
@@ -53,7 +58,7 @@ function Leadership() {
                       to fund the Bancey Foundation.
                     </p>
                   </div>
-                </Link>
+                </div>
               </li>
             </ul>
           </div>

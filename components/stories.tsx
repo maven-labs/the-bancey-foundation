@@ -7,23 +7,25 @@ import SectionHeader from "./ui/section-header";
 const articles = [
   {
     date: "10 Feb 2026",
+    type: "event",
     image:
       "https://www.svcf.org/assets/img/excerpts/_relatedContentDtLargeWebp/1507/Stocksy_comp_1266992-2.webp",
-    title: "Our commitment to equity spans multiple initiatives.",
+    title: "Eid Fair 2025",
     description:
       "Addressing systemic disparities is preeminent among our core strategic priorities, and it is the unifying goal of our key funding initiatives. All of our work is centered on building equity and transforming systems to create a Silicon Valley where everyone can thrive.",
   },
   {
     date: "10 Feb 2026",
+    type: "article",
     image:
       "https://www.svcf.org/assets/img/excerpts/_relatedContentDtSquareWebp/1512/Stocksy_comp_1266992-6.webp",
-    title:
-      "We launch and participate in initiatives and cross-sector solutions that multiply our reach and impact.",
+    title: "How mentorship changed Ama's future.",
     description:
       "Most of these targeted initiatives are three to six years in length. We occasionally take on shorter, high-impact projects.",
   },
   {
     date: "10 Feb 2026",
+    type: "Article",
     image:
       "https://www.nemours.org/_jcr_content/root/container/container/two_panel_block_left_83337711396627/col1/image.coreimg.85.1600.jpeg/1763618903160/block-transplant-doctor-high-five-boy-with-mom.jpeg",
     title: "What Parents Should Know About Childhood Vaccines",
@@ -32,31 +34,35 @@ const articles = [
   },
   {
     date: "10 Feb 2026",
+    type: "event",
     image:
       "https://www.svcf.org/assets/img/excerpts/early-childhood-development/_relatedContentDtSquareWebp/104855/Early_Childhood_Development.webp",
-    title: "Early Childhood Initiatives",
+    title:
+      "From Awareness to Action - How our Positive Masculinity campaign changed conversations in a Junior High School.",
     description:
       "Every child deserves the best possible start in life. The care and education children receive in their first years of life are the building blocks to future success. Yet, in Silicon Valley, one of the wealthiest regions in the nation, inequities deeply rooted in long-standing systems stack the deck against many of our youngest children, particularly those from underserved and under-resourced communities.",
   },
   {
     date: "10 Feb 2026",
+    type: "event",
     image:
       "https://media.carnegie.org/filer_public_thumbnails/filer_public/7a/16/7a16d336-ecce-414e-a276-604e9487dd76/dame_louise_richardson_2025.jpg__810x540_q85_crop_subsampling-2_upscale.jpg",
-    title: "Why Polarization Is a Problem",
+    title: "Positive Masculinity Workshop",
     description:
       "Dame Louise Richardson identifies grounds for optimism as she leads philanthropic efforts to understand and mitigate political polarization in America",
   },
   {
     date: "10 Feb 2026",
+    type: "event",
     image:
       "https://media.carnegie.org/filer_public_thumbnails/filer_public/df/bc/dfbc5aad-c547-46c6-9207-19de91c5dba9/nobel_prize_research_bar_graph.jpg__810x540_q85_crop_subsampling-2_upscale.jpg",
-    title: "Want Greater Prosperity? Mind the Gap",
+    title: "Community Dialogue",
     description:
       "Why are the richest 20 percent of countries 30 times richer than the poorest? Three researchers have an answer, and it won them a Nobel Prize",
   },
 ];
 
-function LatestNews() {
+function Stories() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -103,7 +109,7 @@ function LatestNews() {
     <section>
       <div className="py-6 md:py-8 lg:py-12">
         <div className="container">
-          <SectionHeader title="Featured Stories" />
+          <SectionHeader title="Latest Stories & Events" />
         </div>
         <div className="relative mt-12">
           <div
@@ -120,4 +126,4 @@ function LatestNews() {
   );
 }
 
-export default LatestNews;
+export default Stories;

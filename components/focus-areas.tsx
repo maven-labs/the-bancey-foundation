@@ -43,7 +43,6 @@ async function FocusAreas() {
 
   return (
     <section className="bg-[#faf7ec]">
-      {/* <div className="pt-12 lg:pt-20 xl:pt-28"> */}
       <div className="py-6 md:py-12 lg:py-16">
         <div className="container">
           <div className="flex flex-col">
@@ -71,9 +70,9 @@ async function FocusAreas() {
                 <h4 className="font-semibold text-lg md:text-xl lg:text-2xl mb-1">
                   {area.title}
                 </h4>
-                <p className="text-sm">{area.description}</p>
+                {/* <p className="text-sm">{area.description}</p> */}
                 <div className="mt-auto">
-                  <div className="mt-9 md:mt-12 lg:mt-14">
+                  <div className="mt-4">
                     <Link
                       href={`focus-areas/${area.link}`}
                       className={cn(
